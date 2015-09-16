@@ -12,16 +12,13 @@ apply plugin: "kotlin"
 
 repositories {
     jcenter()
-    maven {
-        url "http://repository.jetbrains.com/all"
-    }
 }
 
 dependencies {
     compile "com.google.guava:guava:18.0"
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
-    testCompile "org.jetbrains.spek:spek:0.1.165"
+    testCompile "junit:junit:4.12"
 }
 
 task wrapper(type: Wrapper) {
