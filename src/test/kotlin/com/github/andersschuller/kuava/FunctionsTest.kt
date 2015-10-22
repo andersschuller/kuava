@@ -11,7 +11,7 @@ import org.junit.Test
 
 class FunctionsTest {
     @Test fun convertFunctionToGuavaFunction() {
-        val f: (String) -> Int = { s -> s.length() }
+        val f: (String) -> Int = { s -> s.length }
         val g: GuavaFunction<String, Int> = f.toGuavaFunction()
         assertEquals(f("foo"), g.apply("foo"))
     }
