@@ -15,8 +15,8 @@ class DelegatesTest {
     @Test fun delegateVarToCache() {
         val example = CacheVarExample(cache)
         example.bar = 43
-        assertEquals(example.bar, 43)
-        assertEquals(cache.getIfPresent("bar"), 43)
+        assertEquals(43, example.bar)
+        assertEquals(43, cache.getIfPresent("bar"))
     }
 
     fun newCache(): Cache<String, Int> {
