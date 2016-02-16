@@ -10,7 +10,7 @@ fun <T> Function1<T, Boolean>.toGuavaPredicate(): GuavaPredicate<T> = GuavaPredi
 
 fun <T> Function0<T>.toGuavaSupplier(): GuavaSupplier<T> = GuavaSupplier { invoke() }
 
-fun <F, T> GuavaFunction<F, T>.toFunction(): Function1<F, T> = { apply(it) }
+fun <F, T> GuavaFunction<F, T>.toFunction(): Function1<F, T?> = { apply(it) }
 
 fun <T> GuavaPredicate<T>.toFunction(): Function1<T, Boolean> = { apply(it) }
 

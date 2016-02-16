@@ -27,10 +27,10 @@ class DelegatesTest {
     }
 
     class CacheValExample(cache: Cache<String, Int>) {
-        val foo: Int by Delegates.cacheVal(cache)
+        val foo: Int? by Delegates.cacheVal(cache)
     }
 
     class CacheVarExample(cache: Cache<String, Int>) {
-        var bar: Int by Delegates.cacheVar(cache)
+        var bar: Int? by Delegates.cacheVar(cache)
     }
 }

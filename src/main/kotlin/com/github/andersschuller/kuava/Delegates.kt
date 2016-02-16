@@ -6,17 +6,17 @@ import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 object Delegates {
-    fun <T> cacheVal(cache: Cache<String, T>) = object : ReadOnlyProperty<Any?, T> {
-        override operator fun getValue(thisRef: Any?, property: KProperty<*>): T {
+    fun <T> cacheVal(cache: Cache<String, T>) = object : ReadOnlyProperty<Any?, T?> {
+        override operator fun getValue(thisRef: Any?, property: KProperty<*>): T? {
             return cache.getIfPresent(property.name)
         }
     }
 
-    fun <T> cacheVar(cache: Cache<String, T>) = object : ReadWriteProperty<Any?, T> {
-        override operator fun getValue(thisRef: Any?, property: KProperty<*>): T {
+    fun <T> cacheVar(cache: Cache<String, T>) = object : ReadWriteProperty<Any?, T?> {
+        override operator fun getValue(thisRef: Any?, property: KProperty<*>): T? {
             return cache.getIfPresent(property.name)
         }
-        override operator fun setValue(thisRef: Any?, property: KProperty<*>, value: T) {
+        override operator fun setValue(thisRef: Any?, property: KProperty<*>, value: T?) {
             cache.put(property.name, value)
         }
     }

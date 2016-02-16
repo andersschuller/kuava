@@ -30,7 +30,7 @@ class FunctionsTest {
 
     @Test fun convertGuavaFunctionToFunction() {
         val g: GuavaFunction<Any, String> = GuavaFunctions.toStringFunction()
-        val f: (Any) -> String = g.toFunction()
+        val f: (Any) -> String? = g.toFunction()
         assertEquals(g.apply(12), f(12))
     }
 
